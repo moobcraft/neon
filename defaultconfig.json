@@ -1,0 +1,6 @@
+{
+  "token": "TOKEN HERE",
+  "prefix": "n!",
+  "color": "#ff4200",
+  "logLevel": "debug"
+}
