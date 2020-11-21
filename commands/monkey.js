@@ -12,6 +12,8 @@ exports.run = (client, message, args) => {
 
   let local = '';
   let rand = getRandomInt(5);
+  if (rand == 0)
+    rand = 1;
   if (args[0])
     rand = args;
   for (let i = 1; i <= rand; i++)
