@@ -1,5 +1,7 @@
 # Neon
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/332b9a2756944f078202bfe0e6845283)](https://app.codacy.com/gh/moobcraft/neon?utm_source=github.com&utm_medium=referral&utm_content=moobcraft/neon&utm_campaign=Badge_Grade)
+
 some discord bot that will someday do neat things for a server
 
 this was closed source but its not now. git history gone cause there was a token in there and i cba to figure out how to get that out of there
