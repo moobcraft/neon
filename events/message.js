@@ -1,8 +1,6 @@
 module.exports = (client, message) => {
 
-  // check if its sent to a channel, if not, just log it as a DM
-  if (message.channel.type === 'text')
-    client.user.setPresence({ activity: { name: message.author.username, type: 'WATCHING' } });
+  client.user.setPresence({ activity: { name: message.author.username, type: 'WATCHING' } });
 
   // Ignore all bots
   if (message.author.bot) return;
