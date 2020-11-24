@@ -10,7 +10,8 @@
     "node": "10.23.0"
   },
   "scripts": {
-    "start": "node main.js"
+    "start": "node main.js",
+    "update": "git pull origin master"
   },
   "dependencies": {
     "discord.js": "^12.5.0",
