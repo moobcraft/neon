@@ -1,7 +1,5 @@
 module.exports = (client, message) => {
 
-  client.user.setPresence({ activity: { name: message.author.username, type: 'WATCHING' } });
-
   // Ignore all bots
   if (message.author.bot) return;
 
