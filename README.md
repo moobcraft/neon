@@ -10,8 +10,10 @@ the code is shit and im aware of that. if you wanna point out rarted things im d
 
 ## setup
 
-just `npm i`  to install dependencies
+just `npm ci`  to install dependencies
 
 copy defaultconfig.json to config.json and put a token in
 
-then `node main.js` in a screen/tmux or dont
+then `npm run` to start. do this in a screen/tmux preferably
+
+you can update from the master branch with `npm run update`
