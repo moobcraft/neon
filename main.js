@@ -77,12 +77,20 @@ const statuses = [
   ['PLAYING', 'Minecraft'],
   ['WATCHING', 'your mom'],
   ['PLAYING', 'your mom'],
+  ['WATCHING', 'nyanners vods'],
+  ['WATCHING', 'artemis of the blue clips'],
+  ['LISTENING', 'lemon demon'],
+  ['LISTENING', 'caravan palace'],
+  ['LISTENING', 'pigstep'],
+  ['STREAMING', 'roblox'],
 ];
 setInterval(function() { // set a random status every fifteen minutes
   const rand = statuses[Math.floor(Math.random() * statuses.length)];
   setTimeout(function() { // it pisses itself if we don't wait a second
+    client.log.debug('Setting random status to ' + rand[0] + rand[1]);
     client.user.setPresence({ activity: { name: rand[1], type: rand[0] } });
   }, 1000); // 1 second
 }, 900000); // 15 minutes
+// for the first 15 mins it wont have a status but i cba to do something about it
 
 client.login(client.config.token);
