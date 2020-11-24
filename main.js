@@ -83,6 +83,9 @@ const statuses = [
   ['LISTENING', 'caravan palace'],
   ['LISTENING', 'pigstep'],
   ['STREAMING', 'roblox'],
+  ['PLAYING', 'osu!'],
+  ['PLAYING', 'Impact Utility Mod'],
+  ['PLAYING', 'Fortnite'],
 ];
 setInterval(function() { // set a random status every fifteen minutes
   const rand = statuses[Math.floor(Math.random() * statuses.length)];
