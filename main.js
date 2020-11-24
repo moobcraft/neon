@@ -1,7 +1,4 @@
-// usual important stuff
-let Discord;
-let Enmap;
-let fs;
+let Discord, Enmap, fs;
 try {
   Discord = require('discord.js');
   Enmap = require('enmap');
@@ -48,7 +45,6 @@ case 'emergency':
 case 'none':
   logParams = { consoleOutput : false };
 }
-
 client.log = require('noogger').init(logParams);
 
 // grab all events and load them all up
