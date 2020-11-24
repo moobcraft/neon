@@ -5,14 +5,18 @@ try {
   fs = require('fs');
 } catch {
   console.log('Dependencies not installed! Run "npm ci" to install them.');
-  return;
+  process.exit(5);
 }
 const client = new Discord.Client();
 try {
   client.config = require('./config.json');
+  if (client.config.token === 'TOKEN HERE') {
+    console.log('Config doesn\'t have a token!');
+    process.exit(5);
+  }
 } catch {
   console.log('Config not created! Copy ./defaultconfig.json to ./config.json and give it a token!');
-  return;
+  process.exit(5);
 }
 
 // log level thingy for the console
