@@ -1,14 +1,26 @@
 // usual important stuff
-const Discord = require('discord.js');
+let Discord;
+let Enmap;
+let fs;
+try {
+  Discord = require('discord.js');
+  Enmap = require('enmap');
+  fs = require('fs');
+} catch {
+  console.log('Dependencies not installed! Run "npm ci" to install them.');
+  return;
+}
 const client = new Discord.Client();
-const fs = require('fs');
-const Enmap = require('enmap');
-const config = require('./config.json');
-client.config = config;
-let logParams;
+try {
+  client.config = require('./config.json');
+} catch {
+  console.log('Config not created! Copy ./defaultconfig.json to ./config.json and give it a token!');
+  return;
+}
 
 // log level thingy for the console
-switch(config.logLevel) {
+let logParams;
+switch(client.config.logLevel) {
 case 'debug':
   logParams = { consoleOutputLevel: 7 };
   break;
@@ -63,4 +75,4 @@ fs.readdir('./commands/', (err, files) => {
   });
 });
 
-client.login(config.token); // actually log into the bot
+client.login(client.config.token);
