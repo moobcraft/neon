@@ -71,4 +71,18 @@ fs.readdir('./commands/', (err, files) => {
   });
 });
 
+// valid types: PLAYING, STREAMING, LISTENING, WATCHING
+const statuses = [
+  ['WATCHING', 'gamers'],
+  ['PLAYING', 'Minecraft'],
+  ['WATCHING', 'your mom'],
+  ['PLAYING', 'your mom'],
+];
+setInterval(function() { // set a random status every fifteen minutes
+  const rand = statuses[Math.floor(Math.random() * statuses.length)];
+  setTimeout(function() { // it pisses itself if we don't wait a second
+    client.user.setPresence({ activity: { name: rand[1], type: rand[0] } });
+  }, 1000); // 1 second
+}, 900000); // 15 minutes
+
 client.login(client.config.token);
