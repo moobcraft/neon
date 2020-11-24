@@ -1,4 +1,16 @@
 {
+  "name": "neon",
+  "author": "Cesium",
+  "description": "Discord bot for some server",
+  "repository": "github:moobcraft/neon",
+  "private": true,
+  "main": "main.js",
+  "engines": {
+    "node": "10.23.0"
+  },
+  "scripts": {
+    "start": "node main.js"
+  },
   "dependencies": {
     "discord.js": "^12.3.1",
     "enmap": "^5.8.0",
