@@ -12,8 +12,8 @@
     "start": "node main.js"
   },
   "dependencies": {
-    "discord.js": "^12.3.1",
-    "enmap": "^5.8.0",
+    "discord.js": "^12.5.0",
+    "enmap": "^5.8.2",
     "fs": "0.0.1-security",
     "noogger": "^0.1.8"
   }
