@@ -94,7 +94,7 @@ const statuses = [
 setInterval(function() { // set a random status every fifteen minutes
   const rand = statuses[Math.floor(Math.random() * statuses.length)];
   setTimeout(function() { // it pisses itself if we don't wait a second
-    client.log.debug('Setting random status to ' + rand[0] + rand[1]);
+    client.log.debug(`Setting status to ${rand[0]} ${rand[1]}`);
     client.user.setPresence({ activity: { name: rand[1], type: rand[0] } });
   }, 1000); // 1 second
 }, 900000); // 15 minutes
