@@ -1,5 +1,6 @@
 {
   "name": "neon",
+  "version": "1.0.0",
   "author": "Cesium",
   "description": "Discord bot for some server",
   "repository": "github:moobcraft/neon",
