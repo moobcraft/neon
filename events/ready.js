@@ -21,6 +21,6 @@ module.exports = (client) => {
     client.log.debug(`Setting status to ${rand[0]} ${rand[1]}`);
     client.user.setPresence({ activity: { name: rand[1], type: rand[0] } });
   }
-  setTimeout(updateStatus, 1e3); // piss
-  setInterval(updateStatus, 900e3); // 15 minutes
+  setTimeout(updateStatus, 1000); // piss
+  setInterval(updateStatus, 900000); // 15 minutes
 };
