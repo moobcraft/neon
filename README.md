@@ -14,6 +14,6 @@ just `npm ci`  to install dependencies
 
 copy defaultconfig.json to config.json and put a token in
 
-then `npm run` to start. do this in a screen/tmux preferably
+then `npm run start` to start. do this in a screen/tmux preferably
 
 you can update from the master branch with `npm run update`
