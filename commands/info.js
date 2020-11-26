@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 exports.run = (client, message) => {
-  message.channel.send('Broken for now...')
+  message.channel.send('Broken for now...');
   /*
   const infoEmbed = new Discord.MessageEmbed()
   // TODO: make it inherit its highest role color in the server

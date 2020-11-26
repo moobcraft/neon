@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 exports.run = (client, message) => {
-  message.channel.send('Broken for now...')
+  message.channel.send('Broken for now...');
   /*
   const guild = message.guild;
   const serverInfoEmbed = new Discord.MessageEmbed()

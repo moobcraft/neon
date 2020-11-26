@@ -1,5 +1,5 @@
 function commandInfo(prefix, command) {
-  return `Command: ${prefix}${command.info.name}\nDescription: ${command.info.description}\nUsage: \`${prefix}${command.info.usage}\``
+  return `Command: ${prefix}${command.info.name}\nDescription: ${command.info.description}\nUsage: \`${prefix}${command.info.usage}\``;
 }
 
 exports.run = (client, message, args) => {
