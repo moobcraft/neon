@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     const commandArray = client.commands.array();
     let list = 'Command List';
     commandArray.forEach(element => {
-      if (element.info.ownerOnly && message.author.id !== client.config.owner) return;
+      if (element.info.ownerOnly && message.author.id !== client.config.owner || element.info.hidden) return;
       else list += `\n\n${commandInfo(client.config.prefix, element)}`;
     });
     message.channel.send(list);
@@ -15,7 +15,7 @@ exports.run = (client, message, args) => {
   }
 
   const command = client.commands.get(args[0]);
-  if (!command) {
+  if (!command || command.info.hidden) {
     message.channel.send(`Command ${args[0]} not found!`);
     return;
   }

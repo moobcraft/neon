@@ -18,4 +18,5 @@ exports.info = {
   description: 'Get info about the bot client',
   usage: 'info',
   aliases: ['i'],
+  hidden: true,
 };
