@@ -26,4 +26,5 @@ exports.info = {
   name: 'help',
   description: 'List commands or get info about one',
   usage: 'help [command]',
+  aliases: ['h', '?'],
 };

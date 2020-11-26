@@ -20,4 +20,5 @@ exports.info = {
   name: 'serverinfo',
   description: 'Get info about the server',
   usage: 'serverinfo',
+  aliases: ['si'],
 };

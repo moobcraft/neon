@@ -9,4 +9,5 @@ exports.info = {
   name: 'say',
   description: 'Make the bot repeat a message',
   usage: 'say <message>',
+  aliases: ['s'],
 };

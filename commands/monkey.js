@@ -28,4 +28,5 @@ exports.info = {
   name: 'monkey',
   description: 'Generate many monkeys thanks to KAMI Blue\'s js bot',
   usage: 'monkey [number of monkeys]',
+  aliases: ['m', 'monky'],
 };
