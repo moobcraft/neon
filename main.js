@@ -75,4 +75,7 @@ fs.readdir('./commands/', (err, files) => {
   });
 });
 
+if (client.config.owner === 'SET TO OWNER ID' || !client.config.owner)
+  client.log.warning('No owner set! You will not be able to run owner only commands!');
+
 client.login(client.config.token);

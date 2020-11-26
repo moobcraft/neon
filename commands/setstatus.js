@@ -16,4 +16,5 @@ exports.info = {
   name: 'setstatus',
   description: 'Set the bot\'s playing status until its next reset',
   usage: 'setstatus <PLAYING|WATCHING|STREAMING|LISTENING> <status>',
+  ownerOnly: true,
 };

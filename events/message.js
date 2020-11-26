@@ -20,6 +20,11 @@ module.exports = (client, message) => {
     return;
   }
 
+  if (cmd.info.ownerOnly && message.author.id !== client.config.owner) {
+    message.channel.send(`\`${command}\` is owner only!`);
+    return;
+  }
+
   // Run the command
   cmd.run(client, message, args);
   client.log.debug(`Command ${command} ran with success`);

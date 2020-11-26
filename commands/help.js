@@ -7,7 +7,8 @@ exports.run = (client, message, args) => {
     const commandArray = client.commands.array();
     let list = 'Command List';
     commandArray.forEach(element => {
-      list += `\n\n${commandInfo(client.config.prefix, element)}`;
+      if (element.info.ownerOnly && message.author.id !== client.config.owner) return;
+      else list += `\n\n${commandInfo(client.config.prefix, element)}`;
     });
     message.channel.send(list);
     return;

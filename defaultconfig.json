@@ -1,5 +1,6 @@
 {
   "token": "TOKEN HERE",
+  "owner": "SET TO OWNER ID",
   "prefix": "n!",
   "color": "#ff4200",
   "logLevel": "info"
