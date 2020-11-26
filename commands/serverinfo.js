@@ -12,3 +12,9 @@ exports.run = (client, message) => {
 		${guild.premiumSubscriptionCount} boosts bringing it to level ${guild.premiumTier}`);
   message.channel.send(serverInfoEmbed);
 };
+
+exports.info = {
+  name: 'serverinfo',
+  description: 'Get info about the server',
+  usage: 'serverinfo',
+};

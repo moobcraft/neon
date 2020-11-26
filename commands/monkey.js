@@ -23,3 +23,9 @@ exports.run = (client, message, args) => {
   if (!local) message.channel.send('‌'); // U+200C, zero width non joiner
   else message.channel.send(local);
 };
+
+exports.info = {
+  name: 'monkey',
+  description: 'Generate many monkeys thanks to KAMI Blue\'s js bot',
+  usage: 'monkey [number of monkeys]',
+};

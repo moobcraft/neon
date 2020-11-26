@@ -9,3 +9,9 @@ exports.run = (client, message) => {
 		More info someday.`);
   message.channel.send(infoEmbed);
 };
+
+exports.info = {
+  name: 'info',
+  description: 'Get info about the bot client',
+  usage: 'info',
+};

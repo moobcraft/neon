@@ -4,3 +4,9 @@ exports.run = (client, message) => {
   // delete the message right after we do what we were told so it looks like its just the bot talking
     .then(message.delete());
 };
+
+exports.info = {
+  name: 'say',
+  description: 'Make the bot repeat a message',
+  usage: 'say <message>',
+};

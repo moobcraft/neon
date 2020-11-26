@@ -11,3 +11,9 @@ exports.run = (client, message, args) => {
   client.user.setPresence({ activity: { name: secondArg, type: args[0] } });
   message.react('✅');
 };
+
+exports.info = {
+  name: 'setstatus',
+  description: 'Set the bot\'s playing status until its next reset',
+  usage: 'setstatus <PLAYING|WATCHING|STREAMING|LISTENING> <status>',
+};
