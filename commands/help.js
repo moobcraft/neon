@@ -3,14 +3,9 @@ exports.run = (client, message, args) => {
     const commandArray = client.commands.array();
     let list = 'Command List';
     commandArray.forEach(element => {
-      list += `
-
-Command: ${client.config.prefix}${element.info.name}
-Description: ${element.info.description}
-Usage: \`${client.config.prefix}${element.info.usage}\``;
+      list += `\n \n Command: ${client.config.prefix}${element.info.name} \n Description: ${element.info.description} \n Usage: \`${client.config.prefix}${element.info.usage}\``;
     });
     message.channel.send(list);
-    // somehow send list of commands without hardcoding it
     return;
   }
 
@@ -19,11 +14,7 @@ Usage: \`${client.config.prefix}${element.info.usage}\``;
     message.channel.send(`Command ${args[0]} not found!`);
     return;
   }
-  message.channel.send(`
-Command: ${client.config.prefix}${command.info.name}
-Description: ${command.info.description}
-Usage: \`${client.config.prefix}${command.info.usage}\`
-`);
+  message.channel.send(`Command: ${client.config.prefix}${command.info.name} \n Description: ${command.info.description} \n Usage: \`${client.config.prefix}${command.info.usage}\``);
 };
 
 exports.info = {
