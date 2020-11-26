@@ -15,7 +15,7 @@ module.exports = (client, message) => {
 
   // complain if command doesnt exist
   if (!cmd) {
-    message.channel.send(`idk if ur tryna make me do something but idk how to do that (\`${command}\` not found)`);
+    message.channel.send(`idk how to do that (\`${command}\` not found) but i have \`${client.config.prefix}help\``);
     client.log.debug(`Command ${command} ran with failure`);
     return;
   }
