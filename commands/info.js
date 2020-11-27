@@ -1,8 +1,6 @@
-const Discord = require('discord.js');
+const {MessageEmbed} = require('discord.js');
 exports.run = (client, message) => {
-  message.channel.send('Broken for now...');
-  /*
-  const infoEmbed = new Discord.MessageEmbed()
+  const infoEmbed = new MessageEmbed()
   // TODO: make it inherit its highest role color in the server
     .setColor(client.config.color)
     .setTitle(`${client.user.username} Info`)
@@ -10,7 +8,6 @@ exports.run = (client, message) => {
     .setDescription(`${client.user.tag} (\`${client.user.id}\`)\n\
 		More info someday.`);
   message.channel.send(infoEmbed);
-  */
 };
 
 exports.info = {
@@ -18,5 +15,4 @@ exports.info = {
   description: 'Get info about the bot client',
   usage: 'info',
   aliases: ['i'],
-  hidden: true,
 };

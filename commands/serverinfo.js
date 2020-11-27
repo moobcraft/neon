@@ -1,9 +1,7 @@
-const Discord = require('discord.js');
+const {MessageEmbed} = require('discord.js');
 exports.run = (client, message) => {
-  message.channel.send('Broken for now...');
-  /*
   const guild = message.guild;
-  const serverInfoEmbed = new Discord.MessageEmbed()
+  const serverInfoEmbed = new MessageEmbed()
   // TODO: make it inherit its highest role color in the server
     .setColor(client.config.color)
     .setTitle(guild.name)
@@ -13,7 +11,6 @@ exports.run = (client, message) => {
 		${guild.memberCount} members\n\
 		${guild.premiumSubscriptionCount} boosts bringing it to level ${guild.premiumTier}`);
   message.channel.send(serverInfoEmbed);
-  */
 };
 
 exports.info = {
@@ -21,5 +18,4 @@ exports.info = {
   description: 'Get info about the server',
   usage: 'serverinfo',
   aliases: ['si'],
-  hidden: true,
 };
