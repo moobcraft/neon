@@ -1,4 +1,4 @@
-const {MessageEmbed} = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 exports.run = (client, message) => {
   const guild = message.guild;
   const serverInfoEmbed = new MessageEmbed()

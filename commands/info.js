@@ -1,4 +1,4 @@
-const {MessageEmbed} = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 exports.run = (client, message) => {
   const infoEmbed = new MessageEmbed()
   // TODO: make it inherit its highest role color in the server

@@ -1,10 +1,10 @@
-const {MessageEmbed} = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 
 exports.run = (client, message, args) => {
   // create an embed and give it the right color
   const helpEmbed = new MessageEmbed()
     .setColor(client.config.color);
-  
+
   function commandInfo(command) {
     /* add a field to the embed that looks like this:
     n!info
