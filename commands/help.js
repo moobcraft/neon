@@ -1,25 +1,42 @@
-function commandInfo(prefix, command) {
-  return `Command: ${prefix}${command.info.name}\nDescription: ${command.info.description}\nUsage: \`${prefix}${command.info.usage}\``;
-}
+const {MessageEmbed} = require('discord.js');
 
 exports.run = (client, message, args) => {
-  if (!args[0]) {
-    const commandArray = client.commands.array();
-    let list = 'Command List';
-    commandArray.forEach(element => {
-      if (element.info.ownerOnly && message.author.id !== client.config.owner || element.info.hidden) return;
-      else list += `\n\n${commandInfo(client.config.prefix, element)}`;
-    });
-    message.channel.send(list);
+  // create an embed and give it the right color
+  const helpEmbed = new MessageEmbed()
+    .setColor(client.config.color);
+  
+  function commandInfo(command) {
+    /* add a field to the embed that looks like this:
+    n!info
+    Description: Get info about the bot client
+    Usage: a!info */
+    helpEmbed.addField(client.config.prefix + command.info.name, `Description: ${command.info.description}\nUsage: \`${client.config.prefix}${command.info.usage}\``);
     return;
   }
 
+  // if we weren't passed a specific command, list all of them
+  if (!args[0]) {
+    const commandArray = client.commands.array();
+    helpEmbed.setTitle('Command List');
+    commandArray.forEach(element => {
+      if (element.info.ownerOnly && message.author.id !== client.config.owner || element.info.hidden) return;
+      else commandInfo(element);
+    });
+    message.channel.send(helpEmbed);
+    return;
+  }
+
+  // if the command doesn't exist or it's hidden, complain
   const command = client.commands.get(args[0]);
   if (!command || command.info.hidden) {
     message.channel.send(`Command ${args[0]} not found!`);
     return;
   }
-  message.channel.send(commandInfo(client.config.prefix, command));
+
+  // if we got this far, we must have been passed a valid, unhidden command
+  // so lets add a field to the embed for that command and send it
+  commandInfo(command);
+  message.channel.send(helpEmbed);
 };
 
 exports.info = {
