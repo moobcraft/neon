@@ -1,14 +1,19 @@
 exports.run = (client, message, args) => {
-  if (!args[1]) {
+  const activityType = args[0];
+  const activityName = args.slice(1).join(' ');
+  if (!activityName) { // didnt pass a second arg
     message.channel.send('Send it like this: WATCHING obama play minecraft');
+    return;
+  }
+  // i bet theres a better way of doing that lmao
+  if (activityType !== 'PLAYING' && activityType !== 'WATCHING' && activityType !== 'STREAMING' && activityType !== 'LISTENING') { // first arg was bad
+    message.channel.send('Invalid type! Valid types: PLAYING, WATCHING, STREAMING, LISTENING');
     return;
   }
 
   // probably not the best way to do this but here we go
-  const temp = args.slice(1);
-  const secondArg = temp.join(' ');
-  client.log.debug(`Setting status to ${args[0]} ${secondArg}`);
-  client.user.setPresence({ activity: { name: secondArg, type: args[0] } });
+  client.log.debug(`Setting status to ${activityType} ${activityName}`);
+  client.user.setPresence({ activity: { name: activityName, type: activityType } });
   message.react('✅');
 };
 
