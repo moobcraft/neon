@@ -44,7 +44,7 @@ fi
 THINGY="\
 [Unit]
 Description=Neon Discord bot
-dependencies
+
 [Service]
 ExecStart=runuser -l $USER -c 'cd $NEON_DIR && npm run start'
 
