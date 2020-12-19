@@ -21,17 +21,16 @@ Running `npm ci`  will install all of these.
 
 ### Setup
 
-This project stores information like discord's access token, the prefix, the
-color, and the id of the owner inside of `./config.json`.
+Run `./install.sh` to automagically install! This will use sudo.
 
-To set it up, copy `defaultconfig.json` to `config.json` and add a token and
-set your discord id as the owner
+After running the install script, you should give the config a token, and
+optionally change it's color, owner ID or prefix. You should also tell
+systemctl to enable the bot on startup with `sudo systemctl enable neon`.
 
 ### Starting
 
-Run `npm run start` (which runs `node main.js`) to start the bot. you can do
-this in a normal term, or run it in a screen/tmux so it persists when you close
-the terminal window.
+Either run `sudo systemctl start neon` or manually run `npm run start` to start
+the bot.
 
 ### Updating
 
