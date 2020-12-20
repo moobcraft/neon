@@ -44,9 +44,12 @@ fi
 THINGY="\
 [Unit]
 Description=Neon Discord bot
+After=network-online.target
 
 [Service]
-ExecStart=runuser -l $USER -c 'cd $NEON_DIR && npm run start'
+User=$USER
+WorkingDirectory=$NEON_DIR
+ExecStart=npm run start
 
 [Install]
 WantedBy=multi-user.target\
