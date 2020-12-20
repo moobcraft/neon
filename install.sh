@@ -7,20 +7,28 @@
 # maybe prompt for the token and offer to start the systemd service as opposed to a reminder
 # echo some kind of help text if bad flags are passed
 
+function _badargs {
+    echo "\
+Valid options:
+    -u USER: run the bot as a different user than the current one
+    -s SERVICE_DIR: create the service file in a different directory than /etc/systemd/system
+    -n NEON_DIR: set neons installed directory to something other than current working dir
+Running without any options is probably what you want to do\
+    "
+}
+
 # where we'll install the neon service
 SERVICE_DIR="/etc/systemd/system"
 NEON_DIR="$PWD"
 
-# ARGUMENTS
-# -u will set it to execute it as a different user than the current one
-# -s will create the service file in a different directory than /etc/systemd/system
 # -n will set neons installed directory to something other than current working dir
 while getopts 'u:s:n:' flag; do
     case "${flag}" in
         u) USER="${OPTARG}" ;;
         s) SERVICE_DIR="$(realpath ${OPTARG})" ;;
         n) NEON_DIR="$(realpath ${OPTARG})" ;;
-        *) exit 1
+        *) _badargs
+           exit 1 ;;
     esac
 done
 
