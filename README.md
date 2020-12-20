@@ -2,9 +2,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/332b9a2756944f078202bfe0e6845283)](https://app.codacy.com/gh/moobcraft/neon?utm_source=github.com&utm_medium=referral&utm_content=moobcraft/neon&utm_campaign=Badge_Grade)
 
-A work-in-progress Discord bot built with modularity in mind. Creating a new
-command is as simple as creating a new file in the commands folder. As little
-as possible is hardcoded, and everything that can be changed is in config.json.
+some dumb discord bot for a friend group's server
 
 ## Running
 
