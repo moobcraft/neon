@@ -5,7 +5,6 @@
 # offer to install those dependencies if we can't find them on the system
 # better error messages than "did you make sure you cd'd to the right directory?"
 # maybe prompt for the token and offer to start the systemd service as opposed to a reminder
-# echo some kind of help text if bad flags are passed
 
 function _badargs {
     echo "\
@@ -34,7 +33,8 @@ done
 
 # check if we're in Neon's directory and complain if we aren't
 if ! test -f $NEON_DIR/README.md; then
-    echo "did you make sure you cd'd to the right directory?"
+    echo "It doesn't look like we're in Neon's directory!"
+    echo "Did you cd to it?"
     exit 1
 fi
 
@@ -44,7 +44,7 @@ then
     echo "Installing node dependencies"
     npm install > /dev/null
 else
-    echo "npm not installed!"
+    echo "Can't install node dependencies because npm isn't installed!"
     exit 1
 fi
 
