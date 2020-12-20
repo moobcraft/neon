@@ -3,7 +3,6 @@
 # TODO
 # check for more dependencies than just npm, theres also node but im lazy
 # offer to install those dependencies if we can't find them on the system
-# better error messages than "did you make sure you cd'd to the right directory?"
 # maybe prompt for the token and offer to start the systemd service as opposed to a reminder
 
 function _badargs {
