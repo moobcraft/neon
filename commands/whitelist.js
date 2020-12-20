@@ -4,7 +4,7 @@ together in exactly the same way that i did lmfao */
 
 // this file works with ../whitelist.sh... somehow
 
-const { exec } = require("child_process");
+const { exec } = require('child_process');
 
 exports.run = (client, message, args) => {
   // if we weren't passed a specific command, list all of them
@@ -12,11 +12,10 @@ exports.run = (client, message, args) => {
     message.channel.send('bruh what am i gonna do with that');
     return;
   } else {
-    //exec(`./whitelist.sh ${args[0]}`);
     exec(`./whitelist.sh ${args[0]}`);
     message.channel.send(`aight, added ${args[0]} to the whitelist`);
   }
-}
+};
 
 exports.info = {
   name: 'whitelist',
