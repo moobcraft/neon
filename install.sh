@@ -23,15 +23,15 @@ NEON_DIR="$PWD"
 while getopts 'u:s:n:' flag; do
     case "${flag}" in
         u) USER="${OPTARG}" ;;
-        s) SERVICE_DIR="$(realpath ${OPTARG})" ;;
-        n) NEON_DIR="$(realpath ${OPTARG})" ;;
+        s) SERVICE_DIR="$(realpath "${OPTARG}")" ;;
+        n) NEON_DIR="$(realpath "${OPTARG}")" ;;
         *) _badargs
            exit 1 ;;
     esac
 done
 
 # check if we're in Neon's directory and complain if we aren't
-if ! test -f $NEON_DIR/README.md; then
+if ! test -f "$NEON_DIR/README.md"; then
     echo "It doesn't look like we're in Neon's directory!"
     echo "Did you cd to it?"
     exit 1
@@ -65,9 +65,9 @@ WantedBy=multi-user.target\
 # create our service file and make it executable
 echo "Creating $SERVICE_DIR/neon.service that will run as user $USER for $NEON_DIR"
 sudo sh -c "echo \"$THINGY\" > $SERVICE_DIR/neon.service"
-sudo chmod +x $SERVICE_DIR/neon.service
+sudo chmod +x "$SERVICE_DIR/neon.service"
 # create the config file
 echo "Creating config file"
-cp -n $NEON_DIR/defaultconfig.json $NEON_DIR/config.json
+cp -n "$NEON_DIR/defaultconfig.json" "$NEON_DIR/config.json"
 # and we're done!
 echo "Finished installing. Remember to tell systemctl to enable neon, and remember to give the config a token"
