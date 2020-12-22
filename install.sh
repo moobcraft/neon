@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # TODO
-# check for more dependencies than just npm, theres also node but im lazy
 # offer to install those dependencies if we can't find them on the system
 # maybe prompt for the token and offer to start the systemd service as opposed to a reminder
 
@@ -36,6 +35,18 @@ if ! test -f "$NEON_DIR/README.md"; then
     echo "Did you cd to it?"
     exit 1
 fi
+
+# name of the command, not name of package
+deps=(node npm screen systemctl)
+echo "Checking system dependencies"
+for i in "${deps[@]}"
+    do
+        if ! command -v $i &> /dev/null
+        then
+            echo "Missing dependency $i!"
+            exit 1
+    fi
+done
 
 # install our dependencies
 if command -v npm &> /dev/null
