@@ -15,7 +15,7 @@ This project depends on:
 [enmap] for commands,\
 fs for managing files like config.json
 
-Running `npm ci`  will install all of these.
+Running `npm i`  will install all of these.
 
 ### Setup
 
