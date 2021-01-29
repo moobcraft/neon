@@ -10,4 +10,5 @@ exports.info = {
   description: 'Make the bot repeat a message',
   usage: 'say <message>',
   aliases: ['s'],
+  ownerOnly: true,
 };
