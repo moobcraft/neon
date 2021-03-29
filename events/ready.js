@@ -15,6 +15,8 @@ module.exports = (client) => {
     ['PLAYING', 'osu!'],
     ['PLAYING', 'Impact Utility Mod'],
     ['PLAYING', 'Fortnite'],
+    ['PLAYING', 'among us'],
+    ['LISTENING', 'chug jug song'],
   ];
   function updateStatus() {
     const rand = statuses[Math.floor(Math.random() * statuses.length)];
