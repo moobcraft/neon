@@ -6,6 +6,7 @@ String.prototype.capitalize = function() {
 
 const colors = {
 	"blue": "0000ff"
+  // TODO: a hex for each color a pokemon can be according to pokeapi.co
 };
 var dex = new Pokedex();
 exports.run = (client, message, args) => {
@@ -19,9 +20,10 @@ exports.run = (client, message, args) => {
     .setColor(colors.blue) // TODO: use actual pokemons color
     .setTitle(response.name.capitalize())
     .setThumbnail(response.sprites.front_default)
+    .setURL(response.forms[0].url)
     .addField("Pokedex Number",response.id)
-    .addField("Height", response.height + " decimeters???")
-    .addField("Weight", response.weight + " hectograms???");
+    .addField("Height", `${response.height / 10}m (${response.height * .3281}ft)`) // TODO: rounding
+    .addField("Weight", `${response.weight / 10}kg (${response.weight / 4.536}lbs)`);
       message.channel.send(embed);
     })
 };
