@@ -3,18 +3,16 @@ function getRandomInt(max) {
 }
 
 exports.run = (client, message) => {
-  let odds = getRandomInt(5); // because 0 counts and 0..5 is six total numbers
-  if (odds == 0) {
+  const odds = getRandomInt(5); // because 0 counts and 0..5 is six total numbers
+  if (odds === 0) {
     if (message.member.kickable) {
       message.react('💥');
       message.channel.send('bang!');
       message.member.kick('russian roulette loser');
-    }
-    else {
+    } else {
       message.channel.send('this is the part where youd get kicked but i dont have perms to do that');
     }
-  }
-  else message.react('👍');
+  } else message.react('👍');
 };
 
 exports.info = {
