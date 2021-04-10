@@ -5,8 +5,17 @@ String.prototype.capitalize = function() {
 }
 
 const colors = {
-	"blue": "0000ff"
-  // TODO: a hex for each color a pokemon can be according to pokeapi.co
+  "black":  "000000",
+	"blue":   "0000ff",
+  "brown":  "ffffff",
+  "gray":   "ffffff",
+  "green":  "00ff00",
+  "pink":   "ffffff",
+  "purple": "ffffff",
+  "red":    "ff0000",
+  "white":  "ffffff",
+  "yellow": "ffffff",
+  // TODO: put actual good looking colors in
 };
 var dex = new Pokedex();
 exports.run = (client, message, args) => {
