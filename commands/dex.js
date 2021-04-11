@@ -23,16 +23,15 @@ exports.run = (client, message, args) => {
     return;
   }
   dex.getPokemonSpeciesByName(args[0])
-    .then(function(response) {
+    .then(function(response) { // TODO: just fix everything cause its all broken
       const embed = new MessageEmbed()
-    .setColor(colors.blue) // TODO: use actual pokemons color
-    .setTitle(response.name.capitalize())
-    //.setThumbnail(response.sprites.front_default) FIX THIS
-    .addField("Pokedex Number",response.id)
-    .addField("Height", `${response.height / 10}m (${response.height * .3281}ft)`) // TODO: rounding
-    .addField("Weight", `${response.weight / 10}kg (${response.weight / 4.536}lbs)`);
+        .setColor(colors.blue) // TODO: use actual pokemons color
+        .setTitle(response.name.capitalize())
+        .addField('Pokedex Number',response.id)
+        .addField('Height', `${response.height / 10}m (${response.height * 0.3281}ft)`) // TODO: rounding
+        .addField('Weight', `${response.weight / 10}kg (${response.weight / 4.536}lbs)`);
       message.channel.send(embed);
-    })
+    });
 };
 
 exports.info = {
