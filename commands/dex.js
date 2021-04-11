@@ -4,18 +4,17 @@ String.prototype.capitalize = function() {
   return this.charAt(0).toUpperCase() + this.slice(1)
 }
 
-const colors = {
-  "black":  "000000",
-	"blue":   "0000ff",
-  "brown":  "ffffff",
-  "gray":   "ffffff",
-  "green":  "00ff00",
-  "pink":   "ffffff",
-  "purple": "ffffff",
-  "red":    "ff0000",
-  "white":  "ffffff",
-  "yellow": "ffffff",
-  // TODO: put actual good looking colors in
+const colors = { // these are yoinked from discord lol
+  "black":  "121314",
+	"blue":   "3498db",
+  "brown":  "a84300",
+  "gray":   "607d8b",
+  "green":  "2ecc71",
+  "pink":   "e91e63",
+  "purple": "9b59b6",
+  "red":    "e74c3c",
+  "white":  "eeeeee",
+  "yellow": "f1c40f",
 };
 var dex = new Pokedex();
 exports.run = (client, message, args) => {
