@@ -16,6 +16,7 @@
     "discord.js": "^12.5.1",
     "enmap": "^5.8.2",
     "fs": "0.0.1-security",
-    "noogger": "^0.1.8"
+    "noogger": "^0.1.8",
+    "pokedex-promise-v2": "^3.3.0"
   }
 }
