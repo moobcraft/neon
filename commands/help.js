@@ -6,7 +6,11 @@ exports.run = (client, message, args) => {
     .setColor(client.config.color);
 
   function listAliases(aliasArray) {
-    return(aliasArray.join(', '));
+    if (!aliasArray) {
+      return('none');
+    } else {
+      return(aliasArray.join(', '));
+    }
   }
   function commandInfo(command) {
     /* add a field to the embed that looks like this:
