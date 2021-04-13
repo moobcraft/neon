@@ -32,5 +32,6 @@ module.exports = (client, message) => {
   }
 
   // Run the command
+  client.log.debug(`Executing ${cmd}`);
   cmd.run(client, message, args);
 };

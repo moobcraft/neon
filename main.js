@@ -52,9 +52,11 @@ case 'none':
 client.log = require('noogger').init(logParams);
 
 // grab all events and load them all up
+client.log.debug('Loading events');
 fs.readdir('./events/', (err, files) => {
   if (err) return client.log.error(err);
   files.forEach(file => {
+    client.log.debug(`Reading ${file}`);
     const event = require(`./events/${file}`);
     const eventName = file.split('.')[0];
     client.on(eventName, event.bind(null, client));
@@ -63,10 +65,12 @@ fs.readdir('./events/', (err, files) => {
 });
 
 // grab all commands and throw them in an enmap
+client.log.debug('Loading commands');
 client.commands = new Enmap();
 fs.readdir('./commands/', (err, files) => {
   if (err) return client.log.error(err);
   files.forEach(file => {
+    client.log.debug(`Reading ${file}`);
     if (!file.endsWith('.js')) return;
     const props = require(`./commands/${file}`);
     const commandName = file.split('.')[0];
