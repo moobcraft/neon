@@ -13,9 +13,10 @@ This project depends on:
 [discord.js] for the whole discord thing,\
 [noogger] for logging,\
 [enmap] for commands,\
+[pokedex-promise-v2] for using pokeapi.co easily,\
 fs for managing files like config.json
 
-Running `npm i`  will install all of these.
+Running `npm i` will install all of these.
 
 ### Setup
 
@@ -42,5 +43,6 @@ Thank you [skylykat] for help with the client status ([#2](https://github.com/mo
 [discord.js]: https://www.npmjs.com/package/discord.js
 [noogger]: https://www.npmjs.com/package/noogger
 [enmap]: https://www.npmjs.com/package/enmap
+[pokedex-promise-v2]: https://www.npmjs.com/package/pokedex-promise-v2
 
 [skylykat]: https://github.com/skylykat
