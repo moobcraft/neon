@@ -17,7 +17,7 @@ module.exports = (client, message) => {
   let cmd = client.commands.get(command);
 
   if (!cmd) { // if we couldnt find a match for the name maybe theres a matching alias
-    cmd = (client.commands.find(val => val.info.aliases.includes(command)))
+    cmd = (client.commands.find(val => val.info.aliases.includes(command)));
   }
 
   // complain if command doesnt exist
