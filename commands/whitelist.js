@@ -21,5 +21,6 @@ exports.info = {
   name: 'whitelist',
   description: 'Whitelist someone on the bedrock server',
   usage: 'whitelist <playername>',
+  aliases: ['wl'],
   ownerOnly: false, // unless someone ruins it
 };
