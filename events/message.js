@@ -14,7 +14,11 @@ module.exports = (client, message) => {
   const command = args.shift().toLowerCase();
 
   // Grab the command data from the client.commands Enmap
-  const cmd = client.commands.get(command);
+  let cmd = client.commands.get(command);
+
+  if (!cmd) { // if we couldnt find a match for the name maybe theres a matching alias
+    cmd = (client.commands.find(val => val.info.aliases.includes(command)))
+  }
 
   // complain if command doesnt exist
   if (!cmd) {
