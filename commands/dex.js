@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
       const embed = new MessageEmbed()
         .setColor(colors.blue) // TODO: use actual pokemons color
         .setTitle(response.name.capitalize())
-        .addField('Pokedex Number',response.id)
+        .addField('Pokedex Number', response.id)
         .addField('Height', `${response.height / 10}m (${response.height * 0.3281}ft)`) // TODO: rounding
         .addField('Weight', `${response.weight / 10}kg (${response.weight / 4.536}lbs)`);
       message.channel.send(embed);

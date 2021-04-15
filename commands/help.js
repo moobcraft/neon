@@ -6,13 +6,13 @@ exports.run = (client, message, args) => {
     .setColor(client.config.color);
 
   function listAliases(aliasArray) {
-    return(aliasArray.join(', '))
+    return(aliasArray.join(', '));
   }
   function commandInfo(command) {
     /* add a field to the embed that looks like this:
     n!info
     Description: Get info about the bot client
-    Usage: a!info 
+    Usage: a!info
     Aliases: i */
     helpEmbed.addField(client.config.prefix + command.info.name, `Description: ${command.info.description}\nUsage: \`${client.config.prefix}${command.info.usage}\`\nAliases: ${listAliases(command.info.aliases)}`);
     return;
@@ -32,7 +32,7 @@ exports.run = (client, message, args) => {
 
   // if the command doesn't exist or it's hidden, complain
   let command = client.commands.get(args[0]);
-  if (!command) command = (client.commands.find(val => val.info.aliases.includes(args[0])))
+  if (!command) command = (client.commands.find(val => val.info.aliases.includes(args[0])));
   if (!command || command.info.hidden) {
     message.channel.send(`Command ${args[0]} not found!`);
     return;
