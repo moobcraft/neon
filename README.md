@@ -35,7 +35,7 @@ the bot.
 You can update the bot from the master branch by running `npm run update`
 (which runs `git pull origin master`).
 
-## Thanks
+## Contributions
 
 Thank you [skylykat] for help with the client status ([#2](https://github.com/moobcraft/neon/pull/2))
 
