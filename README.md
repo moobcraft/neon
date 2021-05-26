@@ -6,6 +6,8 @@ some dumb discord bot for a friend group's server
 
 ## Running
 
+(you can also use ./docker.sh to install it in a docker container)
+
 ### Dependencies
 
 This project depends on:
